@@ -1,4 +1,4 @@
-package com.ml;
+package com.ml.sample;
 
 import org.apache.sshd.server.auth.password.PasswordAuthenticator;
 import org.springframework.boot.SpringApplication;
@@ -15,8 +15,8 @@ public class SftpApplication {
         SpringApplication.run(SftpApplication.class, args);
     }
 
-//    @Bean
-//    PasswordAuthenticator passwordAuthenticator() {
-//        return ((username, password, session) -> true);
-//    }
+    @Bean
+    PasswordAuthenticator passwordAuthenticator() {
+        return ((username, password, session) -> true);
+    }
 }

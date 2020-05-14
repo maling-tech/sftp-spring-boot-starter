@@ -12,7 +12,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.util.FileSystemUtils;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
@@ -23,7 +22,7 @@ import java.util.Collections;
  */
 @Configuration
 @EnableConfigurationProperties(SftpProperties.class)
-@Import({StaticAuthorizeModeConfiguration.class, SftpServerMain.class})
+@Import({StaticAuthorizeModeConfiguration.class, SftpServerListener.class})
 public class SftpServerAutoConfiguration {
 
     @Bean
