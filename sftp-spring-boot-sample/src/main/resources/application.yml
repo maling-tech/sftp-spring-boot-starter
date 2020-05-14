@@ -1,0 +1,16 @@
+#logging.level.com.ml=debug
+
+logging:
+  level:
+    com.ml: debug
+
+sftp:
+  home: /Users/maling/test/ftp
+  host-key: /Users/maling/test/ftp/db.ser
+  authorization:
+    mode: static
+    users:
+      - username: maling
+        password: 111111
+      - username: lisi
+        password: 111111
