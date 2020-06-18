@@ -22,17 +22,20 @@ import java.util.Collections;
  */
 @Configuration
 @EnableConfigurationProperties(SftpProperties.class)
-@Import({StaticAuthorizeModeConfiguration.class, SftpServerListener.class})
+@Import({StaticAuthorizeModeConfiguration.class, SftpServerListener.class, PersistLogSftpEventListener.class})
 public class SftpServerAutoConfiguration {
 
     @Bean
-    SshServer sftpServer(SftpProperties sftpProperties, KeyPairProvider defaultKeyPairProvider, FileSystemFactory defaultFileSystemFactory, PasswordAuthenticator passwordAuthenticator) {
+    SshServer sftpServer(SftpProperties sftpProperties, KeyPairProvider defaultKeyPairProvider, FileSystemFactory defaultFileSystemFactory, PasswordAuthenticator passwordAuthenticator, PersistLogSftpEventListener logSftpEventListener) {
         SshServer server = SshServer.setUpDefaultServer();
         server.setPort(sftpProperties.getPort());
 
         server.setKeyPairProvider(defaultKeyPairProvider);
 
-        SftpSubsystemFactory factory = new SftpSubsystemFactory.Builder().build();
+        SftpSubsystemFactory.Builder builder = new SftpSubsystemFactory.Builder();
+        builder.addSftpEventListener(logSftpEventListener);
+
+        SftpSubsystemFactory factory = builder.build();
         server.setSubsystemFactories(Collections.singletonList(factory));
 
         server.setFileSystemFactory(defaultFileSystemFactory);

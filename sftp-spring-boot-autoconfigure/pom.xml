@@ -5,7 +5,7 @@
     <parent>
         <artifactId>sftp-spring-boot-parent</artifactId>
         <groupId>com.ml</groupId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,10 +22,9 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.apache.sshd</groupId>
-            <artifactId>sshd-spring-sftp</artifactId>
+            <artifactId>sshd-sftp</artifactId>
         </dependency>
 
         <dependency>

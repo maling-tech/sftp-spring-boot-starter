@@ -2,7 +2,8 @@
 
 logging:
   level:
-    com.ml: debug
+    com.ml: info
+#    org.apache.sshd.server.subsystem.sftp: trace
 
 sftp:
   home: /Users/maling/test/ftp
