@@ -13,6 +13,9 @@ public class SftpApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SftpApplication.class, args);
+        while (true) {
+            ;
+        }
     }
 
     @Bean
