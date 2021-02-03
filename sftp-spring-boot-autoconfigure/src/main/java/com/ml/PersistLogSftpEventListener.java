@@ -9,7 +9,6 @@ import org.apache.sshd.server.subsystem.sftp.FileHandle;
 import org.apache.sshd.server.subsystem.sftp.Handle;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -104,8 +103,6 @@ public class PersistLogSftpEventListener extends AbstractSftpEventListenerAdapte
             log.trace("written(" + session + ")[" + localHandle.getFile() + "] offset=" + offset + ", requested=" + dataLen
                     + ((thrown == null) ? "" : (": " + thrown.getClass().getSimpleName() + ": " + thrown.getMessage())));
         }
-
-        log.info("written({})[{}] offset={}", session, localHandle.getFile(), offset);
     }
 
     @Override

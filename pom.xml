@@ -7,7 +7,7 @@
     <groupId>com.ml</groupId>
     <artifactId>sftp-spring-boot-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
     <modules>
         <module>sftp-spring-boot-autoconfigure</module>
         <module>sftp-spring-boot-starter</module>

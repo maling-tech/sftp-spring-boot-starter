@@ -30,6 +30,7 @@ public class SftpServerListener {
         try {
             sshServer.start();
             log.info("Ftp Server start");
+            log.info("Ftp Server port: {}", sshServer.getPort());
         } catch (IOException e) {
             log.error(e.getMessage(), e);
             throw new RuntimeException("Ftp start fail, Event: " + event.getSource());
